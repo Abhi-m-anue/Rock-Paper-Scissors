@@ -1,4 +1,4 @@
-console.log("haai");
+
 function getComputerChoice(){
    let options=["Rock","Paper","Scissors"];
    let x=Math.floor(Math.random()*3);
@@ -9,9 +9,14 @@ start();
 function start(){
     let userpoint=0,compoint=0;
     for(let i=0;i<3;i++){
-        let playerChoice=prompt("Rock|Paper|Scissors ?");
+        const btn=document.querySelectorAll(".btn");
+        let playerChoice;
+        btn.forEach(element => {
+        element.addEventListener('click',(e)=>{
+        playerChoice=e.target.innerHTML.toLowerCase();
+        })});
         let comChoice=getComputerChoice();
-       let pc=playerChoice.toLowerCase();
+        let pc=playerChoice.toLowerCase();
         let cc=comChoice.toLowerCase();
         
         if(play(pc,cc)===1){

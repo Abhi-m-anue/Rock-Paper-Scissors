@@ -1,0 +1,51 @@
+*{
+  box-sizing: border-box;  
+}
+.game-menu{
+    display: flex;
+    margin-top: 150px;
+    justify-content: space-around;
+}
+
+
+.user-side{
+    width:300px;
+    background-color: blue;
+    color: aliceblue;
+}
+.user-side >h2,p{
+    text-align: center;
+}
+.butn-container{
+    display:flex;
+    height: 50px;
+    padding:15px;
+    justify-content: space-around;
+}
+
+.com-side{
+    width:300px;
+    background-color: blue;
+    color: aliceblue;
+}
+.com-side >h2,p{
+    text-align: center;
+}
+.com-choice-container{
+    display:flex;
+    justify-content: space-around;
+}
+
+.score{
+    display: flex;
+    justify-content: space-around;
+}
+
+.result{
+    display: flex;
+    justify-content: center;
+}
+.status{
+    display: flex;
+   justify-content: center;
+}
