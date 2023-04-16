@@ -36,6 +36,10 @@
     justify-content: space-around;
 }
 
+.selected{
+    background-color:brown;
+}
+
 .score{
     display: flex;
     justify-content: space-around;
@@ -43,9 +47,15 @@
 
 .result{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
-.status{
-    display: flex;
-   justify-content: center;
+
+.ply-agn{
+    display:none;
+    
+}
+.enable{
+    width: 125px;
 }
