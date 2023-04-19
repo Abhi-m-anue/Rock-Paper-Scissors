@@ -1,57 +1,116 @@
 *{
   box-sizing: border-box;  
+  background-color: #16161a;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.heading{
+    font-size: xx-large;
+    display: flex;
+    justify-content: center;
+    color:#fffffe;
+}
+.hh{
+
 }
 .game-menu{
+    color: #fffffe;
+    height: 250px;
+    margin-top: 20px;
     display: flex;
-    margin-top: 150px;
-    justify-content: space-around;
+    
+    width: 100%;
+    justify-content: center;
 }
-
-
 .user-side{
-    width:300px;
-    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    width:425px;
+    height: 250px;
+    margin-right: 10px;
+    background-color:#010101;
     color: aliceblue;
 }
-.user-side >h2,p{
+.user-side >h2{
     text-align: center;
+    background-color: inherit;
 }
 .butn-container{
+    flex:1.5;
+    background-color: inherit;
     display:flex;
     height: 50px;
-    padding:15px;
+    padding:22px;
+    margin-bottom: 10px;
     justify-content: space-around;
 }
-
-.com-side{
-    width:300px;
-    background-color: blue;
-    color: aliceblue;
+#rock{
+    background: url('rock.jpg');
 }
-.com-side >h2,p{
+#paper{
+    background: url('paper.jpg');
+}
+#scissors{
+    background: url('scissors.jpg');
+}
+.btn{
+    width: 100px;
+    background-color: #7f5af0;
+}
+.com-side{
+    display: flex;
+    flex-direction: column;
+    width:425px;
+    margin-left: 10px;
+    background-color:#010101;
+    color: aliceblue;
+    border-radius: 10px;
+}
+.com-side >h2{
     text-align: center;
+    background-color: inherit;
 }
 .com-choice-container{
+    height: 100px;
+    flex: 1.5;
+    margin-bottom: 10px;
+    background-color: inherit;
     display:flex;
     justify-content: space-around;
 }
-
+.rock,.paper,.scissors{
+    height: 125px;
+    width: 100px;
+    padding: 50px 20px;
+}
 .selected{
-    background-color:brown;
+    background-color:#7f5af0;
+    color:#010101;
 }
 
 .score{
     display: flex;
     justify-content: space-around;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    height: 70px;
+    font-size: xx-large;
+    color:#72757e;
 }
 
 .result{
+    color:#fffffe;
+    font-size: 30;
+    font-family: sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
-
+.usr-score,.com-score{
+    height:50px;
+}
 .ply-agn{
     display:none;
     
