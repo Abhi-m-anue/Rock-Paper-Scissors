@@ -8,7 +8,7 @@ let userpoint=0,compoint=0;
 comscore.innerHTML="SCORE :"+compoint;
 userscore.innerHTML="SCORE :"+userpoint;
 
-const btn=document.querySelectorAll(".btn");
+const btn=document.querySelectorAll(".btn-div");
     let playerChoice;
     btn.forEach(element => {
     element.addEventListener('click',response)
@@ -16,7 +16,8 @@ const btn=document.querySelectorAll(".btn");
     function response(e){
         if(e){
             playerChoice=e.target.id.toLowerCase();
-            score.style.display= "flex";
+            // score.style.display= "flex";
+            console.log(playerChoice);
             start(playerChoice);
         }
     }
@@ -34,24 +35,24 @@ function start(pc){
         x.classList.add('selected');
         setTimeout(() => {
             x.classList.remove('selected');
-        }, 2000);
+        }, 1200);
         play(pc,cc);
 }
 function play(pc,cc){
     if(pc==="rock" && cc==="paper" || pc==="paper" && cc==="scissors" || pc==="scissors" && cc==="rock"){
         compoint++;
         comscore.innerHTML="SCORE :"+compoint;
-        status.innerHTML="You Loose.."+ cc +" beats "+ pc;
+        status.innerHTML="YOU LOOSE !! "+ cc.toUpperCase() +" BEATS "+ pc.toUpperCase();
         //alert("You Loose.."+ cc +" beats "+ pc+"\n your point:"+userpoint+"  comp point:"+compoint);
     }
     else if(pc==="rock" && cc==="scissors" || pc==="paper" && cc==="rock" || pc==="scissors" && cc==="paper"){
         userpoint++;
         userscore.innerHTML="SCORE :"+userpoint;
-        status.innerHTML="You win.."+ pc +" beats "+cc;
+        status.innerHTML="YOU WIN !! "+ pc.toUpperCase() +" BEATS "+cc.toUpperCase();
         //alert("You win.."+ pc +" beats "+ cc+"\n your point:"+userpoint+"  comp point:"+compoint);
     }
     else if(pc===cc){
-        status.innerHTML="Draw match  ";
+        status.innerHTML="DRAW MATCH ";
        // alert("Draw match  \n your point:"+userpoint+"  comp point:"+compoint)
     }
     checkres(userpoint,compoint);
