@@ -1,20 +1,20 @@
 *{
   box-sizing: border-box;  
-  /* background-color: #16161a; */
-  background-color: #a3aecf;
+   background-color: lightgrey;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .heading{
     font-size: xx-large;
     display: flex;
     justify-content: center;
-    color:#383832;
+    /* color:#383832; */
+    color: black;
 }
 
 .game-menu{
     color: #fffffe;
     height: 250px;
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     width: 100%;
     justify-content: center;
@@ -27,7 +27,7 @@
     height: 250px;
     margin-right: 10px;
     background-color:#fffffe;
-    
+    box-shadow: 0px 0px 20px rgb(80, 77, 77);
 }
 .user-side >h2{
     color: #010101;
@@ -51,19 +51,16 @@
     border-style: solid;
     padding: 2px 5px 0px 5px;
 }
+.btn-div:hover{
+    background-color: lightgrey;
+    transform:translate(2px,2px);
+}
 .el{
     margin-top: 15px;
     text-align: center;
     color: #010101;
-    background-color: #fffffe;
+    background-color: inherit;
 }
-.btn-div:hover{
-    transform:translate(3px,2px);
-}
-/* #r{
-    background: url('rock.png');
-    background-size:cover;
-} */
 
 .btn{
     padding-top: 80px;
@@ -80,6 +77,7 @@
     background-color:#fffffe;
     color: black;
     border-radius: 10px;
+    box-shadow: 0px 0px 20px rgb(80, 77, 77);
 }
 .com-side >h2{
     text-align: center;
@@ -149,11 +147,13 @@
     margin: 0 50px;
     height: 70px;
     font-size: xx-large;
-    color: #383832;
+    /* color: #383832; */
+    color: black;
 }
 
 .result{
-    color:#72757e;
+    /* color:#72757e; */
+    color: #383832;
     font-size: x-large;
     
     font-family: sans-serif;
@@ -178,7 +178,12 @@
 }
 .enable{
     font-size: 1.5ch;
-    color: white;
+    /* color: white; */
+    color: black;
     padding: 10px;
     width: 125px;
+}
+.enable:hover{
+    background-color: lightgray;
+    transform:translate(2px,2px);
 }

@@ -4,6 +4,10 @@ let status=document.querySelector('.status');
 let pa=document.querySelector('.ply-agn');
 let score=document.querySelector('.score');
 
+let win= new Audio('correct-ans.wav');
+let loose= new Audio('wrong_ans.m4a');
+let draw= new Audio('tie.wav');
+
 let userpoint=0,compoint=0;
 comscore.innerHTML="SCORE :"+compoint;
 userscore.innerHTML="SCORE :"+userpoint;
@@ -16,8 +20,11 @@ const btn=document.querySelectorAll(".btn-div");
     function response(e){
         if(e){
             playerChoice=e.target.id.toLowerCase();
-            // score.style.display= "flex";
-            console.log(playerChoice);
+            clk=document.getElementById(playerChoice.toUpperCase());
+            clk.style.backgroundColor= '#fc5868';
+            setTimeout(()=>{
+                clk.style.backgroundColor='initial';
+             },700)
             start(playerChoice);
         }
     }
@@ -35,23 +42,26 @@ function start(pc){
         x.classList.add('selected');
         setTimeout(() => {
             x.classList.remove('selected');
-        }, 1200);
+        }, 700);
         play(pc,cc);
 }
 function play(pc,cc){
     if(pc==="rock" && cc==="paper" || pc==="paper" && cc==="scissors" || pc==="scissors" && cc==="rock"){
+        loose.play();
         compoint++;
         comscore.innerHTML="SCORE :"+compoint;
         status.innerHTML="YOU LOOSE !! "+ cc.toUpperCase() +" BEATS "+ pc.toUpperCase();
         //alert("You Loose.."+ cc +" beats "+ pc+"\n your point:"+userpoint+"  comp point:"+compoint);
     }
     else if(pc==="rock" && cc==="scissors" || pc==="paper" && cc==="rock" || pc==="scissors" && cc==="paper"){
+        win.play();
         userpoint++;
         userscore.innerHTML="SCORE :"+userpoint;
         status.innerHTML="YOU WIN !! "+ pc.toUpperCase() +" BEATS "+cc.toUpperCase();
         //alert("You win.."+ pc +" beats "+ cc+"\n your point:"+userpoint+"  comp point:"+compoint);
     }
     else if(pc===cc){
+        draw.play();
         status.innerHTML="DRAW MATCH ";
        // alert("Draw match  \n your point:"+userpoint+"  comp point:"+compoint)
     }
