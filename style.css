@@ -10,7 +10,9 @@
     /* color:#383832; */
     color: black;
 }
-
+.clicked{
+    background-color: #fc5868 !important;
+}
 .game-menu{
     color: #fffffe;
     height: 250px;
@@ -53,7 +55,7 @@
 }
 .btn-div:hover{
     background-color: lightgrey;
-    transform:translate(2px,2px);
+    transform:translate(1px,1px);
 }
 .el{
     margin-top: 15px;
@@ -184,6 +186,6 @@
     width: 125px;
 }
 .enable:hover{
-    background-color: lightgray;
-    transform:translate(2px,2px);
+    background-color: gray;
+    transform:translate(1px,1px);
 }

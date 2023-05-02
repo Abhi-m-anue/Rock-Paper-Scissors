@@ -7,6 +7,7 @@ let score=document.querySelector('.score');
 let win= new Audio('correct-ans.wav');
 let loose= new Audio('wrong_ans.m4a');
 let draw= new Audio('tie.wav');
+let gamewin= new Audio('win.mp3');
 
 let userpoint=0,compoint=0;
 comscore.innerHTML="SCORE :"+compoint;
@@ -19,12 +20,15 @@ const btn=document.querySelectorAll(".btn-div");
     });
     function response(e){
         if(e){
+            let options=["ROCK","PAPER","SCISSORS"];
+            for (let index = 0; index < options.length; index++) {
+                if(document.getElementById(options[index]).classList.contains('clicked')){
+                    document.getElementById(options[index]).classList.remove('clicked');
+                }
+            }
             playerChoice=e.target.id.toLowerCase();
             clk=document.getElementById(playerChoice.toUpperCase());
-            clk.style.backgroundColor= '#fc5868';
-            setTimeout(()=>{
-                clk.style.backgroundColor='initial';
-             },700)
+            clk.classList.add('clicked');
             start(playerChoice);
         }
     }
@@ -38,11 +42,14 @@ function getComputerChoice(){
 function start(pc){  
         let comChoice=getComputerChoice();
         let cc=comChoice.toLowerCase();
+        let options=["rock","paper","scissors"];
+            for (let index = 0; index < options.length; index++) {
+                if(document.querySelector('.'+options[index]).classList.contains('selected')){
+                    document.querySelector('.'+options[index]).classList.remove('selected');
+                }
+            }
         let x=document.querySelector('.'+cc);  
         x.classList.add('selected');
-        setTimeout(() => {
-            x.classList.remove('selected');
-        }, 700);
         play(pc,cc);
 }
 function play(pc,cc){
@@ -69,8 +76,9 @@ function play(pc,cc){
 }
 
 function checkres(up,cp){
-    if(up===3){
+    if(up===5){
         //alert("You win the game..\n your point:"+up+"  comp point:"+cp);
+        gamewin.play();
         btn.forEach(element => element.removeEventListener('click',response ));
         setTimeout(() => {
             status.innerHTML='YOU WON THE GAME';
@@ -83,7 +91,7 @@ function checkres(up,cp){
             play_again();
             }, 4000);
     }
-    else if(cp===3){
+    else if(cp===5){
         //alert("You Loose the game..\n your point:"+userpoint+"  comp point:"+compoint);
         btn.forEach(element => element.removeEventListener('click',response ));
         setTimeout(() => {
